@@ -3,11 +3,12 @@
     $nome      = $_POST['txtNome'];
     $horaini   = $_POST['txtHorario'];
     
-    var_dump($id);
+    /*var_dump($id);
     var_dump($nome);
-    var_dump($horaini);
+    var_dump($horaini);*/
     
-    $con = mysqli_connect("localhost","bob","bob","univille");
+    //$con = mysqli_connect("localhost","bob","bob","univille");
+    include 'dbconect.php';
     if($id == "0"){
         $insert = "insert into academia(nome, horaini) values(?, ?);";
         $stmt = mysqli_prepare($con, $insert);

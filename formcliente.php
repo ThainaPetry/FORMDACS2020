@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php 
+  include 'dbconect.php';
+?>
 <head>
 
   <meta charset="utf-8">
@@ -50,7 +52,7 @@
     $horaini="";
     
     if(isset($_GET['id'])){
-      $con = mysqli_connect("localhost","bob","bob","univille");
+      //$con = mysqli_connect("localhost","bob","bob","univille");
       $select = "select * from academia where codigo = ?";
       $stmt = mysqli_prepare($con, $select);
       mysqli_stmt_bind_param($stmt, "i", $_GET['id']);

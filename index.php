@@ -48,11 +48,10 @@
   <!-- Page Content -->
   <div class="container">
   <?php
-      $con = mysqli_connect("localhost","bob","bob","univille");
+      include 'dbconect.php';
       $sql = "select * from academia";
       $result = mysqli_query($con,$sql);
 
-    
   ?>
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4">

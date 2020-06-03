@@ -1,7 +1,8 @@
 <?php
+    include 'dbconect.php';
     $id = $_GET['id'];
     
-    $con = mysqli_connect("localhost","bob","bob","univille");
+    //$con = mysqli_connect("localhost","bob","bob","univille");
     
     
     $delete = "delete from academia where codigo = ?";

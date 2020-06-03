@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+   appphp2020thaina:
+     depends_on:
+       - dbthaina  
+     #image: petrytai/appphp2020:latest
+     image: appphp2020:latest
+     ports:
+       - "8080:80"
+     restart: always
+     environment:
+       - DB_HOST=dbthaina
+       - DB_USER=root
+       - DB_PASSWORD=bob
+       - DB_NAME=univille
+   dbthaina:
+     image: mysql:5.7
+     restart: always
+#     ports:
+#       - "3306:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: bob
+       MYSQL_DATABASE: univille
+       MYSQL_USER: bob
+       MYSQL_PASSWORD: bob
+     volumes:
+       - ./banco/:/docker-entrypoint-initdb.d
